@@ -22,47 +22,6 @@ app.get('/newscrape', async (req, res) => {
     //await page.setViewport({ width: 1920, height: 1080 });
     await page.setViewport({ width: 0, height: 0 });
     await page.goto('https://www.rogers.com/consumer/profile/signin');
-
-    await page.waitForTimeout(5000);
-
-  
-    await page.waitForSelector('.ds-formField__inputContainer');
-    await page.click('.ds-formField__inputContainer');
-
-    await page.waitForTimeout(5000);
-
-  
-    await page.waitForSelector('#ds-form-input-id-0');
-    await page.type('#ds-form-input-id-0', 'iamvasantsharma@gmail.com');
-  
-    await page.waitForTimeout(5000);
-
-    
-    await page.waitForSelector('.-primary');
-
-    
-    await page.click('.-primary');
-
-    await page.waitForTimeout(5000);
-
-  
-    await page.waitForSelector('.ds-formField__inputContainer input#input_password');
-    await page.type('.ds-formField__inputContainer input#input_password', 'Basant@8767');
-  
-    await page.waitForTimeout(5000);
-
-    await page.waitForSelector('.-primary');
-    await page.click('.-primary');
-  
-    await page.waitForTimeout(5000);
-
-    await page.waitForSelector('.ds-button.-primary');
-    await page.click('.ds-button.-primary');
-  
-    await page.waitForTimeout(5000);
-
-    await page.waitForSelector('button.mr-4.w-100.ds-button.ds-corners.ds-pointer.text-center.mw-100.d-inline-block.-tertiary.-small');
-    await page.click('button.mr-4.w-100.ds-button.ds-corners.ds-pointer.text-center.mw-100.d-inline-block.-tertiary.-small');
   
     console.log(await page.title());
   
@@ -76,7 +35,7 @@ app.get('/newscrape', async (req, res) => {
   } catch (error) {
     return res.status(500).json({ error: true, message: error.message });
   }
-});
+})
 
 // Export the Express API
 module.exports = app
