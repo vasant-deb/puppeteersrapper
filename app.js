@@ -2,7 +2,10 @@ const express = require('express');
 const app = express();
 const puppeteer = require('puppeteer');
 
-app.get('/', async (req, res) => {
+app.get('/', (req, res) => {
+    res.send('Hello, world!');
+  });
+app.get('/newscrape', async (req, res) => {
     try {
       const browser = await puppeteer.launch({ headless: false });
       const page = await browser.newPage();
