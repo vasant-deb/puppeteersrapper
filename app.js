@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
-const puppeteer = require('puppeteer');
+//const puppeteer = require('puppeteer');
 
 app.get('/', (req, res) => {
     res.send('Hello, world!');
   });
+  /*
 app.get('/newscrape', async (req, res) => {
     try {
       const browser = await puppeteer.launch({ headless: false });
@@ -67,7 +68,7 @@ app.get('/newscrape', async (req, res) => {
       return res.status(500).json({ error: true, message: error.message });
     }
   });
-
+*/
 app.listen(3000, () => {
   console.log('Server is listening on port 3000');
 });
